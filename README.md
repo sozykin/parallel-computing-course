@@ -1,1 +1,1 @@
-# parallel-computing-course
+# Examples for Parallel Computing Course
