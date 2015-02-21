@@ -16,6 +16,7 @@ void compute(int const x, int &result, mutex &result_mutex){
     result_mutex.lock();
     // Write to shared variable
     result += temp;
+    // Unlock mutex after writing
     result_mutex.unlock();
 }
 

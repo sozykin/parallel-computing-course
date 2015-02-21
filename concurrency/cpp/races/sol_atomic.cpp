@@ -11,7 +11,7 @@ using namespace std;
 int const THREAD_NUM = 20;
 
 void compute(int const x, atomic<int> &result){
-    // Write to shared variable
+    // Atomic write to shared variable
     result += x * x;
 }
 
