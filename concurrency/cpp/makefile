@@ -7,5 +7,5 @@ all: $(EXE)
 
 
 clean:
-	rm -fr $(EXE) *.dSYM
+	rm -fr $(EXE) 
 
