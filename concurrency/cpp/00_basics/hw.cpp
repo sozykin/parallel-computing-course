@@ -3,7 +3,7 @@
 using namespace std;
 
 void thread_func(){
-    // Pronting Hello world and ID of the thread
+    // Printing Hello world and ID of the thread
     cout << "Hello world from thread " << this_thread::get_id() << "!" << endl;
 }
 
