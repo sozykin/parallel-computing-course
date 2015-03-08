@@ -8,36 +8,33 @@
 #include <chrono>
 using namespace std;
 
-const string STEW_DESC = "[stew] ";
-const string PUDDING_DESC = "[pudding] ";
-
 void stew(mutex& burner, mutex& mixer){
-    cout << "[stew] Locking Burner" << endl;
+    cout << "[stew] Locking Burner\n";
     lock_guard<mutex> bl(burner);
-    cout << "[stew] Burner is locked" << endl;
+    cout << "[stew] Burner is locked\n";
 
     this_thread::sleep_for(chrono::milliseconds(100));
 
-    cout << "[stew] Locking Mixer" << endl;
+    cout << "[stew] Locking Mixer\n";
     lock_guard<mutex> ml(mixer);
-    cout << "[stew] Mixer is locked" << endl;
+    cout << "[stew] Mixer is locked\n";
 
-    cout << STEW_DESC << "[stew] Preparing" << endl;
+    cout << "[stew] Preparing\n";
 }
 
 void pudding(mutex& burner, mutex& mixer){
  
-    cout << "[pudding] Locking Mixer" << endl;
+    cout << "[pudding] Locking Mixer\n";
     lock_guard<mutex> ml(mixer);
-    cout << "[pudding] Mixer is locked" << endl;
+    cout << "[pudding] Mixer is locked\n";
    
     this_thread::sleep_for(chrono::milliseconds(100));
 
-    cout << "[pudding] Locking Burner" << endl;
+    cout << "[pudding] Locking Burner\n";
     lock_guard<mutex> bl(burner);
-    cout << "[pudding] Burner is locked" << endl;
+    cout << "[pudding] Burner is locked\n";
 
-    cout << "[pudding] Preparing" << endl;
+    cout << "[pudding] Preparing\n";
 }
 
 int main(){
