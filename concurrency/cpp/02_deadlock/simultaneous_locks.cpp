@@ -1,5 +1,6 @@
 ///
 /// Example of deadlock
+/// Acquiring two locks simultaneously
 ///
 #include <iostream>
 #include <thread>
@@ -10,7 +11,7 @@ using namespace std;
 
 void stew(mutex& burner, mutex& mixer){
     cout << "[stew] Locking Burner and Mixer\n";
-    // Create lock guards but not lock the mutexes
+    // Create unique lock but not lock the mutexes
     unique_lock<mutex> bl(burner, defer_lock);
     unique_lock<mutex> ml(mixer, defer_lock);
     // Lock both mutexes simultaneously
