@@ -16,9 +16,8 @@ void producer(concurrent_queue<int>& cq){
 } 
 
 void consumer(concurrent_queue<int>& cq, int n){
-    std::shared_ptr<int> number;
     for (int i = 0; i < n; i++){
-        number = cq.wait_and_pop();
+        auto number = cq.wait_and_pop();
         std::stringstream ss;
         ss << "[" << std::this_thread::get_id() << "] Extracting  value "
            <<  *number << std::endl;
